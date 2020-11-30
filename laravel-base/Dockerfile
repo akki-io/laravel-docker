@@ -1,4 +1,4 @@
-FROM php:7.3-fpm-alpine
+FROM php:7.4-fpm-alpine
 
 # update & install basic packages
 RUN apk update \
@@ -56,10 +56,10 @@ RUN apk add --no-cache \
         libxpm \
         libxpm-dev \
     &&  docker-php-ext-configure gd \
-        --with-webp-dir=/usr/include/ \
-        --with-jpeg-dir=/usr/include/ \
-        --with-xpm-dir=/usr/include/ \
-        --with-freetype-dir=/usr/include/ \
+        --with-webp=/usr/include/ \
+        --with-jpeg=/usr/include/ \
+        --with-xpm=/usr/include/ \
+        --with-freetype=/usr/include/ \
     && NPROC=$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) \
     && docker-php-ext-install -j${NPROC} \
         gd
