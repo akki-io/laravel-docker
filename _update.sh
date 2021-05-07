@@ -11,6 +11,11 @@ cd laravel-web \
   && docker push akkica/laravel-web:8.0rc && docker push akkica/laravel-web:latest \
   && cd ..
 
+cd laravel-web-wkhtmltopdf \
+  && docker build -t akkica/laravel-web-wkhtmltopdf:8.0rc -t akkica/laravel-web-wkhtmltopdf:latest . \
+  && docker push akkica/laravel-web-wkhtmltopdf:8.0rc && docker push akkica/laravel-web-wkhtmltopdf:latest \
+  && cd ..
+
 cd laravel-cron \
   && docker build -t akkica/laravel-cron:8.0rc -t akkica/laravel-cron:latest . \
   && docker push akkica/laravel-cron:8.0rc && docker push akkica/laravel-cron:latest \
