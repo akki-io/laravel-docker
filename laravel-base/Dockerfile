@@ -1,4 +1,4 @@
-FROM php:8.0-rc-fpm-alpine
+FROM php:8.0-fpm-alpine
 
 # update & install basic packages
 RUN apk update \
@@ -67,7 +67,6 @@ RUN apk add --no-cache \
         gd
 
 # install imagick
-# use github version for now until release from https://pecl.php.net/get/imagick is ready for PHP 8
 RUN apk add --no-cache --virtual \
         .phpize-deps $PHPIZE_DEPS \
         autoconf \
@@ -78,12 +77,9 @@ RUN apk add --no-cache --virtual \
         imagemagick-dev \
     && apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ --allow-untrusted gnu-libiconv \
     && export CFLAGS="$PHP_CFLAGS" CPPFLAGS="$PHP_CPPFLAGS" LDFLAGS="$PHP_LDFLAGS" \
-#    && apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ --allow-untrusted gnu-libiconv \
-#    && export CFLAGS="$PHP_CFLAGS" CPPFLAGS="$PHP_CPPFLAGS" LDFLAGS="$PHP_LDFLAGS" \
-#    && pecl install imagick-3.4.3 redis \
-    && mkdir -p /usr/src/php/ext/imagick \
-    && curl -fsSL https://github.com/Imagick/imagick/archive/06116aa24b76edaf6b1693198f79e6c295eda8a9.tar.gz | tar xvz -C "/usr/src/php/ext/imagick" --strip 1 \
-    && docker-php-ext-install imagick \
+    && apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ --allow-untrusted gnu-libiconv \
+    && export CFLAGS="$PHP_CFLAGS" CPPFLAGS="$PHP_CPPFLAGS" LDFLAGS="$PHP_LDFLAGS" \
+    && pecl install imagick-3.5.1 redis \
     && apk del \
         .phpize-deps \
         autoconf \
