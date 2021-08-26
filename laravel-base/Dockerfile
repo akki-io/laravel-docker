@@ -11,12 +11,14 @@ RUN apk update \
         libzip-dev \
         git \
         nodejs \
-        npm
+        npm \
+        postgresql-dev
 
 # install other php extension
 RUN docker-php-ext-install \
     pdo \
     pdo_mysql \
+    pdo_pgsql \
     pcntl \
     posix \
     opcache \
