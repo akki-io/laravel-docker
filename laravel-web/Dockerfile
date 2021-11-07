@@ -6,7 +6,7 @@ RUN apk update \
     && mkdir -p /run/nginx
 
 # copy host file
-COPY vhost.conf /etc/nginx/conf.d/default.conf
+COPY vhost.conf /etc/nginx/http.d/default.conf
 
 EXPOSE 80
 
