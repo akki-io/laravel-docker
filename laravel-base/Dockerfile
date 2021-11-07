@@ -35,4 +35,4 @@ RUN install-php-extensions \
     imagick
 
 # copy php.ini file
-COPY ./php.ini "$PHP_INI_DIR/php.ini"
+RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
