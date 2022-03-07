@@ -12,6 +12,7 @@ RUN apk update \
         git \
         nodejs \
         npm \
+        yarn \
         postgresql-dev
 
 # install php extension
