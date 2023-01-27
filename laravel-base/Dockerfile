@@ -1,4 +1,4 @@
-FROM php:8.1-fpm-alpine
+FROM php:5.5-fpm-alpine
 
 # update & install basic packages
 RUN apk update \
@@ -8,12 +8,12 @@ RUN apk update \
         openssl \
         procps \
         zlib-dev \
-        libzip-dev \
         git \
         nodejs \
-        npm \
-        yarn \
         postgresql-dev
+
+
+COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
 # install php extension
 # https://github.com/mlocati/docker-php-extension-installer
@@ -26,14 +26,8 @@ RUN install-php-extensions \
     pcntl \
     opcache \
     bcmath \
-    zip \
     exif \
     sockets \
     intl \
-    @composer \
     redis \
-    gd \
-    imagick
-
-# copy php.ini file
-RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
+    gd
