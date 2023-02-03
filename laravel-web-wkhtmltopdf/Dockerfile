@@ -1,4 +1,4 @@
-FROM akkica/laravel-base:5.5
+FROM akkica/laravel-web:5.5
 
 # install wkhtmltopdf
 RUN apk add --update --no-cache \

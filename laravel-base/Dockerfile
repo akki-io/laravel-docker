@@ -13,7 +13,7 @@ RUN apk update \
         postgresql-dev
 
 
-COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+COPY --from=composer:1.10 /usr/bin/composer /usr/local/bin/composer
 
 # install php extension
 # https://github.com/mlocati/docker-php-extension-installer
