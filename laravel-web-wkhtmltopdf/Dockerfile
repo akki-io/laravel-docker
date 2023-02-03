@@ -1,4 +1,4 @@
-FROM akkica/laravel-web
+FROM akkica/laravel-web:7.4
 
 RUN apk add --update --no-cache \
     libgcc \
