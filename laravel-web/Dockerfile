@@ -1,4 +1,4 @@
-FROM akkica/laravel-base
+FROM akkica/laravel-base:7.3
 
 # install Nginx
 RUN apk update \
