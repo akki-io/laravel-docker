@@ -1,4 +1,4 @@
-FROM akkica/laravel-base
+FROM akkica/laravel-base:7.2
 
 # set the working directory
 WORKDIR /var/www/html
