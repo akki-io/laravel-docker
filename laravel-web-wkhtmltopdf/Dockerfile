@@ -1,4 +1,4 @@
-FROM akkica/laravel-web
+FROM akkica/laravel-web:8.2
 
 # install wkhtmltopdf
 RUN apk add --update --no-cache \
