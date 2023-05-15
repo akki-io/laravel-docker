@@ -92,3 +92,15 @@ RUN apk add --no-cache --virtual \
 
 # copy php.ini file
 COPY ./php.ini "$PHP_INI_DIR/php.ini"
+
+RUN docker-php-ext-configure gd \
+    --with-gd \
+    --with-webp-dir \
+    --with-jpeg-dir \
+    --with-png-dir \
+    --with-zlib-dir \
+    --with-xpm-dir \
+    --with-freetype-dir \
+    --enable-gd-native-ttf
+
+RUN docker-php-ext-install gd
