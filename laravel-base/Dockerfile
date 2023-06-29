@@ -1,4 +1,4 @@
-FROM php:8.2-fpm-alpine
+FROM php:8.2.7-fpm-alpine
 
 # update & install basic packages
 RUN apk update \
@@ -36,4 +36,4 @@ RUN install-php-extensions \
     imagick
 
 # copy php.ini file
-RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
+COPY /php.ini-production "$PHP_INI_DIR/php.ini"
