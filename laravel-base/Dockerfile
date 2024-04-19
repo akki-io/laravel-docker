@@ -1,4 +1,4 @@
-FROM php:8.3.0alpha2-fpm-alpine
+FROM php:8.3-fpm-alpine
 
 # update & install basic packages
 RUN apk update \
