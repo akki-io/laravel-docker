@@ -1,4 +1,4 @@
-FROM akkica/laravel-base:8.3
+FROM akkica/laravel-base:8.4
 # install Nginx
 RUN apk update \
     && apk add nginx \
