@@ -30,3 +30,8 @@ cd laravel-horizon \
   && docker build -t akkica/laravel-horizon:stable . \
   && docker push akkica/laravel-horizon:stable \
   && cd ..
+
+cd laravel-reverb \
+  && docker build -t akkica/laravel-reverb:stable . \
+  && docker push akkica/laravel-reverb:stable \
+  && cd ..

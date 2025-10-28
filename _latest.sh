@@ -30,3 +30,8 @@ cd laravel-horizon \
   && docker build -t akkica/laravel-horizon:latest . \
   && docker push akkica/laravel-horizon:latest \
   && cd ..
+
+  cd laravel-reverb \
+    && docker build -t akkica/laravel-reverb:latest . \
+    && docker push akkica/laravel-reverb:latest \
+    && cd ..

@@ -30,3 +30,8 @@ cd laravel-horizon \
   && docker build -t akkica/laravel-horizon:8.4 . \
   && docker push akkica/laravel-horizon:8.4 \
   && cd ..
+
+cd laravel-reverb \
+  && docker build -t akkica/laravel-reverb:8.4 . \
+  && docker push akkica/laravel-reverb:8.4 \
+  && cd ..
