@@ -18,7 +18,8 @@ This repository complements the tutorial, which shows how to get started with yo
 | v8.3.0alpha2  | 8.3.0alpha2 | Experimental |
 | v8.3 | 8.3           | All fixes |
 | v8.4 | 8.4           | All fixes |
-| stable | 8.4         | All fixes |
-| latest | 8.4         | All fixes |
+| v8.5 | 8.5           | All fixes |
+| stable | 8.5         | All fixes |
+| latest | 8.5         | All fixes |
 
 Visit [https://akki.ca/tutorial/laravel-docker/](https://akki.ca/tutorial/laravel-docker/) to learn more.
